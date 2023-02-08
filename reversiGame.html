@@ -74,7 +74,6 @@
         return;
       }
       if (canClickSpot(turn, row, column) === true) {
-        console.log(1);
         let affectedDiscs = getAffectedDiscs(turn, row, column);
         flipDiscs(affectedDiscs);
         discs[row][column] = turn;
