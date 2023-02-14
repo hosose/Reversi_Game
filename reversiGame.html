@@ -70,7 +70,7 @@
           3.둘 곳이 없으면 턴이 넘어감
           4.색을 뒤집어야함
           */
-      if (discs[row][column] != 0) {
+      if (discs[row][column] !== 0) {
         return;
       }
       if (canClickSpot(turn, row, column) === true) {
@@ -84,8 +84,23 @@
           alert('Game Over');
           gameOver = true;
         }
+
         drawDiscs();
         drawCanMoveLayer();
+        if (canMoveLayer.childElementCount === 0) {
+          if (turn === 2) {
+            alert('no space for white');
+            turn = 1;
+          } else if (turn === 1) {
+            alert('no space for black');
+            turn = 2;
+          }
+        }
+        drawCanMoveLayer();
+        if (canMoveLayer.childElementCount === 0) {
+          alert('Game Over');
+          gameOver = true;
+        }
         redrawScore();
       }
     }
@@ -269,7 +284,6 @@
           */
       for (let i = 0; i < affectedDiscs.length; i++) {
         let spot = affectedDiscs[i];
-        console.log(spot);
         discs[spot.row][spot.column] === 1
           ? (discs[spot.row][spot.column] = 2)
           : (discs[spot.row][spot.column] = 1);
@@ -300,8 +314,7 @@
               discOutline.style.backgroundColor = 'white';
             }
 
-            discLayer.appendChild(discOutline);
-          } else {
+            canMoveLayer.appendChild(discOutline);
           }
         }
       }
