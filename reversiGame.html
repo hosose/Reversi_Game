@@ -123,10 +123,10 @@
       else return true;
     }
     function getAffectedDiscs(id, row, column) {
-      var affectedDiscs = [];
+      let affectedDiscs = [];
       //오른쪽 확인
-      var couldBeAffected = [];
-      var columnIterator = column;
+      let couldBeAffected = [];
+      let columnIterator = column;
       while (columnIterator < 7) {
         columnIterator += 1;
         let valueAtSpot = discs[row][columnIterator];
@@ -141,8 +141,8 @@
         }
       }
       //왼쪽 확인
-      var couldBeAffected = [];
-      var columnIterator = column;
+      couldBeAffected = [];
+      columnIterator = column;
       while (columnIterator > 0) {
         columnIterator -= 1;
         let valueAtSpot = discs[row][columnIterator];
@@ -157,8 +157,8 @@
         }
       }
       //위쪽 확인
-      var couldBeAffected = [];
-      var rowIterator = row;
+      couldBeAffected = [];
+      let rowIterator = row;
       while (rowIterator > 0) {
         rowIterator -= 1;
         let valueAtSpot = discs[rowIterator][column];
@@ -173,8 +173,8 @@
         }
       }
       //아래쪽 확인
-      var couldBeAffected = [];
-      var rowIterator = row;
+      couldBeAffected = [];
+      rowIterator = row;
       while (rowIterator < 7) {
         rowIterator += 1;
         let valueAtSpot = discs[rowIterator][column];
@@ -189,9 +189,9 @@
         }
       }
       //대각선 확인 (4개)
-      var couldBeAffected = [];
-      var rowIterator = row;
-      var columnIterator = column;
+      couldBeAffected = [];
+      rowIterator = row;
+      columnIterator = column;
       while (rowIterator < 7 && columnIterator < 7) {
         rowIterator += 1;
         columnIterator += 1;
@@ -207,9 +207,9 @@
         }
       }
 
-      var couldBeAffected = [];
-      var rowIterator = row;
-      var columnIterator = column;
+      couldBeAffected = [];
+      rowIterator = row;
+      columnIterator = column;
       while (rowIterator > 0 && columnIterator < 7) {
         rowIterator -= 1;
         columnIterator += 1;
@@ -225,9 +225,9 @@
         }
       }
 
-      var couldBeAffected = [];
-      var rowIterator = row;
-      var columnIterator = column;
+      couldBeAffected = [];
+      rowIterator = row;
+      columnIterator = column;
       while (rowIterator < 7 && columnIterator > 0) {
         rowIterator += 1;
         columnIterator -= 1;
@@ -243,9 +243,9 @@
         }
       }
 
-      var couldBeAffected = [];
-      var rowIterator = row;
-      var columnIterator = column;
+      couldBeAffected = [];
+      rowIterator = row;
+      columnIterator = column;
       while (rowIterator > 0 && columnIterator > 0) {
         rowIterator -= 1;
         columnIterator -= 1;
